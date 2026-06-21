@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>皇冠体育平台介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f4f7fc;
+            color: #1e2d3d;
+            line-height: 1.6;
+            padding: 0 18px 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0 12px;
+            border-bottom: 1px solid #d8e4ed;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #0f5c6b;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c4b5c;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0f7a8c;
+        }
+
+        /* 主视觉区域 */
+        .hero {
+            margin: 32px 0 36px;
+            padding: 28px 20px;
+            background: linear-gradient(145deg, #ffffff, #eef6fa);
+            border-radius: 24px;
+            box-shadow: 0 6px 16px rgba(0, 40, 50, 0.06);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0b4b58;
+            margin-bottom: 14px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 750px;
+            color: #2f4b58;
+        }
+
+        .hero strong {
+            color: #0f6f80;
+        }
+
+        /* 网格卡片 —— 场景模块 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin: 36px 0 32px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 18px 22px;
+            box-shadow: 0 4px 12px rgba(0, 30, 40, 0.04);
+            border-left: 4px solid #0f8a9c;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 60, 70, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #124f5e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card h3::before {
+            content: "●";
+            color: #0f8a9c;
+            font-size: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2d4350;
+        }
+
+        /* 介绍 + 嵌入链接段落 */
+        .intro-block {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 22px;
+            margin: 20px 0 28px;
+            box-shadow: 0 2px 10px rgba(0, 30, 40, 0.03);
+        }
+
+        .intro-block p {
+            margin-bottom: 14px;
+        }
+
+        .intro-block a {
+            color: #0f6f80;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dashed #8fc3d0;
+        }
+
+        .intro-block a:hover {
+            color: #0a5666;
+            border-bottom-style: solid;
+        }
+
+        /* 常见说明 / FAQ 摘要 */
+        .faq-summary {
+            background: #e7f1f6;
+            border-radius: 20px;
+            padding: 22px 22px 18px;
+            margin: 28px 0 18px;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0b4b58;
+            margin-bottom: 12px;
+        }
+
+        .faq-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #d0dfe8;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1a4a57;
+            margin-bottom: 4px;
+        }
+
+        .faq-item .a {
+            font-size: 0.93rem;
+            color: #2f4b58;
+        }
+
+        .faq-item .a a {
+            color: #0f6f80;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #aacad6;
+        }
+
+        /* 页脚引用 */
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #5f7a87;
+            border-top: 1px solid #d8e4ed;
+            padding-top: 24px;
+            margin-top: 18px;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0 12px 30px;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .nav-links {
+                gap: 12px;
+                font-size: 0.85rem;
+            }
+            .card {
+                padding: 18px 14px 18px;
+            }
+            .intro-block {
+                padding: 18px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 顶部导航 -->
+    <nav>
+        <span class="logo">皇冠体育</span>
+        <div class="nav-links">
+            <a href="#scene">场景</a>
+            <a href="#faq">常见说明</a>
+            <a href="#about">关于</a>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <div class="hero">
+        <h1>围绕体育赛事的综合信息平台</h1>
+        <p>从联赛数据到竞技动态，<strong>皇冠体育</strong>致力于为关注体育内容的用户提供结构化的资讯聚合与主题导航。平台覆盖多项主流运动，帮助爱好者快速定位感兴趣的话题。</p>
+    </div>
+
+    <!-- 核心介绍段落 + 链接自然嵌入 -->
+    <div class="intro-block" id="about">
+        <p>体育信息的积累与整合，在今天显得尤为重要。许多用户习惯在赛前赛后浏览各类分析、对阵记录以及历史数据。<a href="https://cn-portal-huangguan.com">皇冠体育</a>正是基于这样的需求，尝试将分散的赛事相关内容以更清晰的方式呈现。不论你关注的是团队战术还是个人表现，都能在这里找到结构化的参考。</p>
+        <p>值得注意的是，平台本身并不生产原始赛事数据，而是通过筛选与分类，帮助用户节省检索时间。对于深度体育爱好者来说，一个能够快速定位内容的入口，往往比碎片化搜索更有效率。<a href="https://cn-portal-huangguan.com">皇冠体育</a>在信息组织上侧重实用性，力图让浏览过程更加流畅。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scene-grid" id="scene">
+        <div class="card">
+            <h3>赛前信息预览</h3>
+            <p>比赛日之前，快速了解双方近期状态、交锋记录及阵容变化。通过模块化摘要，用户可在几分钟内建立对比赛的基本认知。</p>
+        </div>
+        <div class="card">
+            <h3>话题讨论聚合</h3>
+            <p>围绕热门赛事、球员动态或规则解读，汇集来自不同视角的内容。适合希望在赛后延伸阅读、了解多元观点的用户。</p>
+        </div>
+        <div class="card">
+            <h3>运动知识索引</h3>
+            <p>从基础规则到专业术语，分类整理常见体育知识点。新入门爱好者可以按图索骥，逐步构建自己的体育知识体系。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <div class="faq-summary" id="faq">
+        <h3>常见说明</h3>
+        <div class="faq-item">
+            <div class="q">▸ 平台内容更新频率如何？</div>
+            <div class="a">内容会根据赛事日历及重要节点进行周期性更新，确保所呈现的信息具有时效性。具体可参考 <a href="https://cn-portal-huangguan.com">皇冠体育</a> 各板块的最新动态。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">▸ 是否需要注册才能使用？</div>
+            <div class="a">目前大部分信息浏览功能无需注册，用户可直接访问各主题页面。部分互动或个性化功能可能涉及账号体系，具体以页面提示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">▸ 信息源主要来自哪里？</div>
+            <div class="a">信息整合自公开的体育数据、赛事报道及行业分析，平台负责整理与归类，帮助用户更高效地获取感兴趣的内容。</div>
+        </div>
+    </div>
+
+    <!-- 页脚提示 -->
+    <div class="footer-note">
+        <span>基于公开信息整合 · 皇冠体育</span>
+    </div>
+</div>
+</body>
+</html>
