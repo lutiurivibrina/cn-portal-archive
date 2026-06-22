@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悟空体育 · 资料索引与信息整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f2f4f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2c3e50;
+            line-height: 1.75;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        /* 开场区 – 短句 + 轻节奏 */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero .emblem {
+            font-size: 2.4rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #2b3a4a;
+            border-bottom: 2px solid #d5dce2;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #5f6e7a;
+            margin-top: 0.15rem;
+            font-weight: 350;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e3e8ed;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.45rem;
+            font-weight: 500;
+            color: #1f2b36;
+            margin-bottom: 1rem;
+            border-left: 4px solid #b8c7d4;
+            padding-left: 0.9rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            color: #3d4b58;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 — 温和、克制、叙述感 */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            padding-left: 0.2rem;
+            margin: 1.4rem 0 0.4rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            font-size: 0.96rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px dashed #e8edf1;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-item .marker {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #8f9fae;
+            border-radius: 12px;
+            flex-shrink: 0;
+            margin-top: 0.7rem;
+        }
+
+        .feature-item .desc {
+            flex: 1;
+            color: #2f3d4b;
+        }
+
+        .feature-item .tag {
+            background: #edf1f5;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            color: #4a5b6a;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        /* 内嵌链接样式 */
+        a {
+            color: #1f5b8c;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.15s ease, color 0.15s;
+            font-weight: 450;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #1f5b8c;
+            color: #0e3e5f;
+        }
+
+        /* 温和结尾 */
+        .closing-note {
+            background: #f7f9fb;
+            border: 1px solid #dee4ea;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin-top: 0.3rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #3d4f5c;
+        }
+
+        .closing-note a {
+            font-weight: 500;
+        }
+
+        .footer-meta {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #7c8d9b;
+            border-top: 1px solid #dbe1e7;
+            padding-top: 1.5rem;
+            margin-top: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+
+            .card {
+                padding: 1.4rem 1.2rem;
+                border-radius: 14px;
+            }
+
+            .hero .emblem {
+                font-size: 1.9rem;
+            }
+
+            .feature-item {
+                flex-wrap: wrap;
+                gap: 0.3rem;
+            }
+
+            .feature-item .tag {
+                margin-left: 1.8rem;
+            }
+
+            .closing-note {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero .emblem {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 开场短句 -->
+        <div class="hero">
+            <div class="emblem">悟空体育 · 资料整理</div>
+            <div class="sub">从信息索引到内容归档，一条安静的线索。</div>
+        </div>
+
+        <!-- 承接段落：资料整理视角 -->
+        <div class="card">
+            <h2>为什么需要一份索引</h2>
+            <p>
+                在体育资讯与赛事数据日益庞杂的今天，与其被动接收碎片，不如主动搭建自己的参照系。从赛事结构、队伍沿革到运动项目的基础档案，具备条理的资料索引能帮我们更从容地回溯和理解。
+            </p>
+            <p>
+                这份页面来自一次围绕“信息组织”的小尝试：把与体育内容相关的若干条目、场景和记录线索整理在一起，不渲染，不夸大，只提供一个可沉淀的起点。而其中一条持续的线索，来自 <a href="https://main-wukongsport.com">悟空体育</a> —— 一个以赛事信息与运动内容为主的独立站点。
+            </p>
+        </div>
+
+        <!-- 特点列表：叙述感，克制的条目 -->
+        <div class="card">
+            <h2>整理时留意到的几个特点</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <span class="marker"></span>
+                    <span class="desc">项目覆盖面从主流联赛到区域锦标赛，对资料归档而言，视野比较平衡。</span>
+                    <span class="tag">广度</span>
+                </div>
+                <div class="feature-item">
+                    <span class="marker"></span>
+                    <span class="desc">部分赛事历史与赛季回顾有专门的整理页，便于沿时间线追溯。</span>
+                    <span class="tag">时间线</span>
+                </div>
+                <div class="feature-item">
+                    <span class="marker"></span>
+                    <span class="desc">术语与数据呈现以简洁为主，没有过多装饰性元素，适合快速查阅。</span>
+                    <span class="tag">低噪</span>
+                </div>
+                <div class="feature-item">
+                    <span class="marker"></span>
+                    <span class="desc">内容结构偏模块化，不同运动类别可以单独展开，方便按需浏览。</span>
+                    <span class="tag">模块</span>
+                </div>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.93rem; color: #4a5b6a;">
+                这些细节未必适合所有人，但在资料整理的习惯里，它们构成了可以持续参考的底层。
+            </p>
+        </div>
+
+        <!-- 场景段落 / 温和的提示 -->
+        <div class="card">
+            <h2>可能用得上的场景</h2>
+            <p>
+                如果你正在梳理某个体育项目的背景资料，或者想了解不同赛事的组织节奏，一份结构清晰的参考索引可以节省不少前期时间。慢慢翻阅，将零散信息与自己的观察相互对照，往往比被动接收更有效。
+            </p>
+            <p>
+                偶尔回到同一个信息来源，看看条目有没有更新，也是保持知识脉络连贯的小习惯。比如 <a href="https://main-wukongsport.com">悟空体育</a> 上某些赛事的赛季归档，就值得隔段时间再浏览一次。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要（极简） -->
+        <div class="card" style="padding-bottom: 1.5rem;">
+            <h2>FAQ 摘要 · 关于索引本身</h2>
+            <p><strong>这些整理会定期更新吗？</strong><br>
+            目前保持不定期修订，主要依据赛事周期与信息变动。没有固定频率，但会尽量让链接与分类描述保持准确。</p>
+            <p style="margin-top: 0.9rem;"><strong>是否涵盖所有运动项目？</strong><br>
+            不，只覆盖了一部分。索引的价值不在于全，而在于筛选后的可用性。如果你发现缺失的板块，也意味着可以成为你自己的补充起点。</p>
+            <p style="margin-top: 0.9rem;"><strong>与 <a href="https://main-wukongsport.com">悟空体育</a> 的关系？</strong><br>
+            它是索引中多次参照的站点之一，提供赛事信息与内容条目。本页面不代替也不镜像其内容，只是从资料整理的角度做引用与记录。</p>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing-note">
+            <p style="margin-bottom: 0.4rem;">索引不是终点，是下一次浏览的起点。</p>
+            <p style="margin-bottom: 0;">慢慢整理，慢慢对照。如果某条信息恰好带你找到了想要的脉络，那就是它最自然的用处。</p>
+        </div>
+
+        <div class="footer-meta">
+            资料整理 · 内容索引 · 信息归档
+        </div>
+
+    </div>
+</body>
+</html>
